@@ -12,7 +12,7 @@
           "size": "38",
           "condition": "very good",
           "priceUAH": 1290,
-          "photos": [],
+          "photos": ["assets/boots-1.jpg"],
           "links": {
             "monobazar": "",
             "shafa": "",
