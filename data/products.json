@@ -5,22 +5,27 @@
       "id": "shoes",
       "title": "Взуття",
       "items": [
-        {
-          "id": "demo-boots-1",
-          "title": "Демо: шкіряні чоботи",
-          "brand": "",
-          "size": "38",
-          "condition": "very good",
-          "priceUAH": 1290,
-          "photos": ["assets/boots-1.jpg"],
-          "links": {
-            "monobazar": "",
-            "shafa": "",
-            "olx": "",
-            "youtube": ""
-          },
-          "tags": ["шкіра", "зима"]
-        }
+{
+  "id": "nakd-braided-heels-38",
+  "title": "Босоніжки NA-KD braided heels",
+  "brand": "NA-KD",
+  "size": "38",
+  "condition": "excellent",
+  "priceUAH": 1290,
+
+  "photos": [
+    "assets/boots-1.jpg"
+  ],
+
+  "links": {
+    "monobazar": "",
+    "shafa": "",
+    "olx": "",
+    "youtube": ""
+  },
+
+  "tags": ["new"]
+}
       ]
     }
   ]
