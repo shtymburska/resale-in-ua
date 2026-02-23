@@ -3,22 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>resale.in.ua — відібрані речі</title>
-  <meta name="description" content="Відібраний resale одяг і взуття. Купівля через mono-базар / Шафа / OLX. YouTube Shorts — для кожної речі." />
+  <title>resale.in.ua — curated resale</title>
+  <meta name="description" content="Відібрані речі з гардеробу та секонд-знахідок. Оформлення через mono-базар / Шафа / OLX. Відеоогляди в YouTube Shorts." />
 
   <style>
     :root{
-      --bg:#0b0b0c;
-      --card:#121214;
-      --text:#f3f3f4;
-      --muted:#b7b7bb;
-      --line:#242428;
-      --accent:#c9a227;
-      --btn:#1b1b1f;
-      --btn2:#151518;
-      --radius:16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --max: 980px;
+      --bg:#0b0b0c; --card:#121214; --text:#f3f3f4; --muted:#b7b7bb;
+      --line:#242428; --accent:#c9a227; --btn:#1b1b1f; --btn2:#151518;
+      --radius:16px; --shadow: 0 10px 30px rgba(0,0,0,.35); --max: 1040px;
     }
     *{box-sizing:border-box}
     body{
@@ -33,12 +25,9 @@
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 48px;}
     header{
       display:flex; align-items:center; justify-content:space-between; gap:14px;
-      padding:12px 0 22px;
-      border-bottom:1px solid var(--line);
+      padding:12px 0 22px; border-bottom:1px solid var(--line);
     }
-    .brand{
-      display:flex; flex-direction:column; gap:6px;
-    }
+    .brand{display:flex; flex-direction:column; gap:6px;}
     .brand b{font-size:18px; letter-spacing:.2px}
     .brand span{font-size:13px; color:var(--muted)}
     nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
@@ -46,17 +35,12 @@
       display:inline-flex; align-items:center; gap:8px;
       padding:10px 12px; border:1px solid var(--line);
       background:rgba(255,255,255,.02);
-      border-radius:999px;
-      text-decoration:none;
-      font-size:13px;
+      border-radius:999px; text-decoration:none; font-size:13px;
     }
     .pill:hover{border-color:rgba(201,162,39,.55)}
     .hero{
       padding:26px 0 18px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:stretch;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; align-items:stretch;
     }
     @media (max-width: 860px){
       .hero{grid-template-columns:1fr}
@@ -69,33 +53,14 @@
       box-shadow:var(--shadow);
       padding:18px;
     }
-    h1{
-      margin:0 0 10px;
-      font-size:34px;
-      line-height:1.1;
-      letter-spacing:.2px;
-    }
+    h1{margin:0 0 10px; font-size:34px; line-height:1.1; letter-spacing:.2px;}
     .lead{margin:0; color:var(--muted); font-size:15px; line-height:1.55;}
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:8px;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:var(--btn);
-      text-decoration:none;
-      font-size:14px;
-      cursor:pointer;
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border:1px dashed rgba(201,162,39,.5);
+      border-radius:12px; background:rgba(201,162,39,.06);
+      color:rgba(243,243,244,.95); font-size:13px;
     }
-    .btn:hover{border-color:rgba(201,162,39,.55)}
-    .btn.primary{
-      background: linear-gradient(180deg, rgba(201,162,39,.95), rgba(201,162,39,.75));
-      border-color: rgba(201,162,39,.9);
-      color:#141414;
-      font-weight:650;
-    }
-    .small{font-size:12px; color:var(--muted); margin-top:10px}
     .gridHead{
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
       margin-top:10px;
@@ -115,8 +80,7 @@
       border:1px solid var(--line);
       border-radius:var(--radius);
       overflow:hidden;
-      display:flex;
-      flex-direction:column;
+      display:flex; flex-direction:column;
       min-height: 280px;
     }
     .ph{
@@ -125,6 +89,18 @@
       display:flex; align-items:center; justify-content:center;
       color:rgba(255,255,255,.55);
       font-size:12px;
+      position:relative;
+    }
+    .ph img{width:100%; height:100%; object-fit:cover; display:block;}
+    .badge{
+      position:absolute; left:10px; top:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.12);
+      font-size:12px;
+      color:rgba(243,243,244,.95);
+      backdrop-filter: blur(8px);
     }
     .itemBody{padding:14px; display:flex; flex-direction:column; gap:8px; flex:1}
     .title{font-weight:650}
@@ -138,32 +114,28 @@
       background:var(--btn2);
       text-decoration:none;
       font-size:13px;
-      flex:1;
-      text-align:center;
+      flex:1; text-align:center;
       min-width: 120px;
     }
     .linkBtn:hover{border-color:rgba(201,162,39,.55)}
+    .muted{color:var(--muted)}
+    .err{
+      border:1px solid rgba(255,80,80,.35);
+      background: rgba(255,80,80,.08);
+      padding:12px;
+      border-radius:12px;
+      color: rgba(255,220,220,.95);
+      font-size:13px;
+      margin-top:12px;
+      white-space:pre-wrap;
+    }
     footer{
-      margin-top:26px;
-      padding-top:18px;
+      margin-top:26px; padding-top:18px;
       border-top:1px solid var(--line);
       color:var(--muted);
       font-size:12px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+      display:flex; flex-wrap:wrap; gap:10px;
       justify-content:space-between;
-    }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border:1px dashed rgba(201,162,39,.5);
-      border-radius:12px;
-      background:rgba(201,162,39,.06);
-      color:rgba(243,243,244,.95);
-      font-size:13px;
     }
     code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px}
   </style>
@@ -177,7 +149,7 @@
         <span>відібрані речі з гардеробу та секонд-знахідок</span>
       </div>
       <nav>
-        <a class="pill" href="#items">Каталог</a>
+        <a class="pill" href="#catalog">Каталог</a>
         <a class="pill" href="#how">Як купити</a>
         <a class="pill" href="#contact">Контакти</a>
       </nav>
@@ -187,99 +159,41 @@
       <div class="card">
         <h1>Curated resale: одяг і взуття, які хочеться носити.</h1>
         <p class="lead">
-          Кожна річ має свій короткий відео-огляд у YouTube Shorts. Купівля — через зручні платформи
+          Кожна річ має короткий відео-огляд у YouTube Shorts. Купівля — через зручні платформи
           (mono-базар / Шафа / OLX), щоб було спокійно і прозоро.
         </p>
-        <div class="ctaRow">
-          <a class="btn primary" href="#items">Дивитися речі</a>
-          <a class="btn" href="#how">Як це працює</a>
-        </div>
-        <div class="small">
-          Порада: коли додамо перші товари — поставимо на кожну річ кнопки “Купити” + “Відео огляд”.
-        </div>
+        <p class="lead" style="margin-top:12px">
+          Дані товарів беруться з <code>data/products.json</code>. Тобі не треба руками верстати кожну картку.
+        </p>
       </div>
 
       <div class="card">
-        <div class="tag">Формат старту: сайт-вітрина + продаж через платформи</div>
+        <div class="tag">Старт: сайт-вітрина + продаж через платформи</div>
         <p class="lead" style="margin-top:12px">
-          Це найшвидший спосіб запуститися: сайт збирає увагу, платформи дають довіру,
-          а ти не витрачаєшся на складну технічну частину.
+          Сайт збирає увагу. Платформи дають довіру. А ти керуєш каталогом через JSON.
         </p>
         <p class="lead" style="margin-top:12px">
-          Далі (коли буде потік) — можна додати “кошик” і оплату напряму. Але зараз нам потрібен перший продаж.
+          Коли буде потік — докрутимо фільтри, пошук, сторінки товарів і домен resale.in.ua.
         </p>
       </div>
     </section>
 
-    <section id="items">
+    <section id="catalog">
       <div class="gridHead">
         <h2>Каталог</h2>
-        <div class="note">Зараз тут демо-картки. Потім замінимо на твої речі.</div>
+        <div class="note">Оновлено: <span id="updatedAt" class="muted">—</span></div>
       </div>
 
-      <div class="items">
-        <!-- DEMO ITEM 1 -->
-        <article class="item">
-          <div class="ph">Фото речі (додамо пізніше)</div>
-          <div class="itemBody">
-            <div class="title">Демо: Чоботи шкіряні</div>
-            <div class="meta">
-              <span>Розмір: 38</span><span>Стан: very good</span><span>Бренд: —</span>
-            </div>
-            <div class="price">1 290 грн</div>
-            <div class="links">
-              <a class="linkBtn" href="#" aria-label="Посилання на mono-базар">mono-базар</a>
-              <a class="linkBtn" href="#" aria-label="Посилання на Шафу">Шафа</a>
-              <a class="linkBtn" href="#" aria-label="Посилання на YouTube Shorts">YouTube</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- DEMO ITEM 2 -->
-        <article class="item">
-          <div class="ph">Фото речі (додамо пізніше)</div>
-          <div class="itemBody">
-            <div class="title">Демо: Пальто вовняне</div>
-            <div class="meta">
-              <span>Розмір: S–M</span><span>Стан: excellent</span><span>Бренд: —</span>
-            </div>
-            <div class="price">1 750 грн</div>
-            <div class="links">
-              <a class="linkBtn" href="#">mono-базар</a>
-              <a class="linkBtn" href="#">OLX</a>
-              <a class="linkBtn" href="#">YouTube</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- DEMO ITEM 3 -->
-        <article class="item">
-          <div class="ph">Фото речі (додамо пізніше)</div>
-          <div class="itemBody">
-            <div class="title">Демо: Светр (oversize)</div>
-            <div class="meta">
-              <span>Розмір: M</span><span>Стан: good</span><span>Бренд: —</span>
-            </div>
-            <div class="price">690 грн</div>
-            <div class="links">
-              <a class="linkBtn" href="#">Шафа</a>
-              <a class="linkBtn" href="#">OLX</a>
-              <a class="linkBtn" href="#">YouTube</a>
-            </div>
-          </div>
-        </article>
-      </div>
+      <div id="catalogRoot"></div>
+      <div id="errorBox" class="err" style="display:none"></div>
     </section>
 
     <section id="how" style="margin-top:22px">
       <div class="card">
         <h2 style="margin:0 0 10px; font-size:16px">Як купити</h2>
         <p class="lead" style="margin:0">
-          1) Обираєш річ у каталозі → 2) натискаєш “Купити” на зручній платформі → 3) оформлюєш замовлення там.<br/>
-          Якщо хочеш — додаємо кнопку “Написати” (Telegram) для швидких питань про заміри.
-        </p>
-        <p class="small" style="margin-bottom:0">
-          І так, це нормально (і чесно) написати: “Оформлення через платформи — для безпечної угоди”.
+          1) Обираєш річ у каталозі → 2) натискаєш кнопку платформи → 3) оформлюєш замовлення там.<br/>
+          Якщо хочеш — додамо кнопку “Написати” (Telegram) для швидких питань про заміри.
         </p>
       </div>
     </section>
@@ -288,20 +202,109 @@
       <div class="card">
         <h2 style="margin:0 0 10px; font-size:16px">Контакти</h2>
         <p class="lead" style="margin:0">
-          Додамо твої контакти, коли скажеш які саме: Telegram / Instagram / email.
-          (Я б почала з Telegram + Instagram.)
+          Тут будуть твої контакти (Telegram / Instagram / email). Скажеш які — вставимо.
         </p>
       </div>
     </section>
 
     <footer>
       <div>© <span id="y"></span> resale.in.ua</div>
-      <div>Зроблено просто: GitHub Pages</div>
+      <div>GitHub Pages • каталог з JSON</div>
     </footer>
   </div>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    const root = document.getElementById('catalogRoot');
+    const errorBox = document.getElementById('errorBox');
+    const updatedAtEl = document.getElementById('updatedAt');
+
+    function esc(s){
+      return String(s ?? '').replace(/[&<>"']/g, (c) => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      })[c]);
+    }
+
+    function makeLinkButton(label, href){
+      if(!href) return '';
+      const safe = esc(href);
+      return `<a class="linkBtn" href="${safe}" target="_blank" rel="noopener">${esc(label)}</a>`;
+    }
+
+    function itemCard(item){
+      const title = esc(item.title);
+      const brand = esc(item.brand || '—');
+      const size = esc(item.size || '—');
+      const condition = esc(item.condition || '—');
+      const price = Number(item.priceUAH || 0).toLocaleString('uk-UA');
+
+      const photos = Array.isArray(item.photos) ? item.photos : [];
+      const img = photos[0] ? `<img src="${esc(photos[0])}" alt="${title}">` : '';
+      const phInner = photos[0] ? img : 'Фото (додамо)';
+
+      const links = item.links || {};
+      const buttons = [
+        makeLinkButton('mono-базар', links.monobazar),
+        makeLinkButton('Шафа', links.shafa),
+        makeLinkButton('OLX', links.olx),
+        makeLinkButton('YouTube', links.youtube),
+      ].filter(Boolean).join('');
+
+      return `
+        <article class="item">
+          <div class="ph">${phInner}${item.tags?.length ? `<div class="badge">${esc(item.tags[0])}</div>` : ''}</div>
+          <div class="itemBody">
+            <div class="title">${title}</div>
+            <div class="meta">
+              <span>Бренд: ${brand}</span><span>Розмір: ${size}</span><span>Стан: ${condition}</span>
+            </div>
+            <div class="price">${price} грн</div>
+            <div class="links">${buttons || '<span class="muted" style="font-size:12px">Додай посилання в JSON</span>'}</div>
+          </div>
+        </article>
+      `;
+    }
+
+    function categoryBlock(cat){
+      const title = esc(cat.title || cat.id || 'Категорія');
+      const items = Array.isArray(cat.items) ? cat.items : [];
+      if(items.length === 0) return '';
+
+      const cards = items.map(itemCard).join('');
+      return `
+        <div style="margin-top:14px">
+          <div class="gridHead">
+            <h2>${title}</h2>
+            <div class="note">${items.length} шт.</div>
+          </div>
+          <div class="items">${cards}</div>
+        </div>
+      `;
+    }
+
+    async function boot(){
+      try{
+        const res = await fetch('./data/products.json', { cache: 'no-store' });
+        if(!res.ok) throw new Error(`Не можу завантажити data/products.json (HTTP ${res.status})`);
+        const data = await res.json();
+
+        updatedAtEl.textContent = data.updatedAt ? esc(data.updatedAt) : '—';
+
+        const categories = Array.isArray(data.categories) ? data.categories : [];
+        if(categories.length === 0){
+          root.innerHTML = `<div class="err">У products.json немає categories або вони порожні.</div>`;
+          return;
+        }
+
+        root.innerHTML = categories.map(categoryBlock).join('') || `<div class="err">Немає товарів для показу.</div>`;
+      }catch(e){
+        errorBox.style.display = 'block';
+        errorBox.textContent = 'Помилка завантаження каталогу:\n' + (e?.message || e);
+      }
+    }
+
+    boot();
   </script>
 </body>
 </html>
