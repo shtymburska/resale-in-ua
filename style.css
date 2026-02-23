@@ -70,6 +70,7 @@ body{
   justify-content:center;
   overflow:hidden;
   border-bottom:1px solid var(--line);
+  position:relative;
 }
 
 .ph img{
