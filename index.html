@@ -1,1 +1,307 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>resale.in.ua — відібрані речі</title>
+  <meta name="description" content="Відібраний resale одяг і взуття. Купівля через mono-базар / Шафа / OLX. YouTube Shorts — для кожної речі." />
 
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --card:#121214;
+      --text:#f3f3f4;
+      --muted:#b7b7bb;
+      --line:#242428;
+      --accent:#c9a227;
+      --btn:#1b1b1f;
+      --btn2:#151518;
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(201,162,39,.18), transparent 60%),
+                  radial-gradient(900px 700px at 110% 10%, rgba(255,255,255,.06), transparent 55%),
+                  var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 48px;}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:12px 0 22px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .brand b{font-size:18px; letter-spacing:.2px}
+    .brand span{font-size:13px; color:var(--muted)}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:999px;
+      text-decoration:none;
+      font-size:13px;
+    }
+    .pill:hover{border-color:rgba(201,162,39,.55)}
+    .hero{
+      padding:26px 0 18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr}
+      nav{justify-content:flex-start}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.1;
+      letter-spacing:.2px;
+    }
+    .lead{margin:0; color:var(--muted); font-size:15px; line-height:1.55;}
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:var(--btn);
+      text-decoration:none;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .btn:hover{border-color:rgba(201,162,39,.55)}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(201,162,39,.95), rgba(201,162,39,.75));
+      border-color: rgba(201,162,39,.9);
+      color:#141414;
+      font-weight:650;
+    }
+    .small{font-size:12px; color:var(--muted); margin-top:10px}
+    .gridHead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-top:10px;
+    }
+    .gridHead h2{margin:0; font-size:16px}
+    .note{color:var(--muted); font-size:12px}
+    .items{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    @media (max-width: 920px){ .items{grid-template-columns: repeat(2,1fr);} }
+    @media (max-width: 560px){ .items{grid-template-columns: 1fr;} }
+    .item{
+      background:rgba(0,0,0,.18);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 280px;
+    }
+    .ph{
+      aspect-ratio: 4/3;
+      background: repeating-linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.06) 10px, rgba(255,255,255,.02) 10px, rgba(255,255,255,.02) 20px);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(255,255,255,.55);
+      font-size:12px;
+    }
+    .itemBody{padding:14px; display:flex; flex-direction:column; gap:8px; flex:1}
+    .title{font-weight:650}
+    .meta{font-size:12px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px}
+    .price{font-size:16px; font-weight:750}
+    .links{margin-top:auto; display:flex; flex-wrap:wrap; gap:8px}
+    .linkBtn{
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:var(--btn2);
+      text-decoration:none;
+      font-size:13px;
+      flex:1;
+      text-align:center;
+      min-width: 120px;
+    }
+    .linkBtn:hover{border-color:rgba(201,162,39,.55)}
+    footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border:1px dashed rgba(201,162,39,.5);
+      border-radius:12px;
+      background:rgba(201,162,39,.06);
+      color:rgba(243,243,244,.95);
+      font-size:13px;
+    }
+    code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <b>resale.in.ua</b>
+        <span>відібрані речі з гардеробу та секонд-знахідок</span>
+      </div>
+      <nav>
+        <a class="pill" href="#items">Каталог</a>
+        <a class="pill" href="#how">Як купити</a>
+        <a class="pill" href="#contact">Контакти</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Curated resale: одяг і взуття, які хочеться носити.</h1>
+        <p class="lead">
+          Кожна річ має свій короткий відео-огляд у YouTube Shorts. Купівля — через зручні платформи
+          (mono-базар / Шафа / OLX), щоб було спокійно і прозоро.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="#items">Дивитися речі</a>
+          <a class="btn" href="#how">Як це працює</a>
+        </div>
+        <div class="small">
+          Порада: коли додамо перші товари — поставимо на кожну річ кнопки “Купити” + “Відео огляд”.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tag">Формат старту: сайт-вітрина + продаж через платформи</div>
+        <p class="lead" style="margin-top:12px">
+          Це найшвидший спосіб запуститися: сайт збирає увагу, платформи дають довіру,
+          а ти не витрачаєшся на складну технічну частину.
+        </p>
+        <p class="lead" style="margin-top:12px">
+          Далі (коли буде потік) — можна додати “кошик” і оплату напряму. Але зараз нам потрібен перший продаж.
+        </p>
+      </div>
+    </section>
+
+    <section id="items">
+      <div class="gridHead">
+        <h2>Каталог</h2>
+        <div class="note">Зараз тут демо-картки. Потім замінимо на твої речі.</div>
+      </div>
+
+      <div class="items">
+        <!-- DEMO ITEM 1 -->
+        <article class="item">
+          <div class="ph">Фото речі (додамо пізніше)</div>
+          <div class="itemBody">
+            <div class="title">Демо: Чоботи шкіряні</div>
+            <div class="meta">
+              <span>Розмір: 38</span><span>Стан: very good</span><span>Бренд: —</span>
+            </div>
+            <div class="price">1 290 грн</div>
+            <div class="links">
+              <a class="linkBtn" href="#" aria-label="Посилання на mono-базар">mono-базар</a>
+              <a class="linkBtn" href="#" aria-label="Посилання на Шафу">Шафа</a>
+              <a class="linkBtn" href="#" aria-label="Посилання на YouTube Shorts">YouTube</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- DEMO ITEM 2 -->
+        <article class="item">
+          <div class="ph">Фото речі (додамо пізніше)</div>
+          <div class="itemBody">
+            <div class="title">Демо: Пальто вовняне</div>
+            <div class="meta">
+              <span>Розмір: S–M</span><span>Стан: excellent</span><span>Бренд: —</span>
+            </div>
+            <div class="price">1 750 грн</div>
+            <div class="links">
+              <a class="linkBtn" href="#">mono-базар</a>
+              <a class="linkBtn" href="#">OLX</a>
+              <a class="linkBtn" href="#">YouTube</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- DEMO ITEM 3 -->
+        <article class="item">
+          <div class="ph">Фото речі (додамо пізніше)</div>
+          <div class="itemBody">
+            <div class="title">Демо: Светр (oversize)</div>
+            <div class="meta">
+              <span>Розмір: M</span><span>Стан: good</span><span>Бренд: —</span>
+            </div>
+            <div class="price">690 грн</div>
+            <div class="links">
+              <a class="linkBtn" href="#">Шафа</a>
+              <a class="linkBtn" href="#">OLX</a>
+              <a class="linkBtn" href="#">YouTube</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" style="margin-top:22px">
+      <div class="card">
+        <h2 style="margin:0 0 10px; font-size:16px">Як купити</h2>
+        <p class="lead" style="margin:0">
+          1) Обираєш річ у каталозі → 2) натискаєш “Купити” на зручній платформі → 3) оформлюєш замовлення там.<br/>
+          Якщо хочеш — додаємо кнопку “Написати” (Telegram) для швидких питань про заміри.
+        </p>
+        <p class="small" style="margin-bottom:0">
+          І так, це нормально (і чесно) написати: “Оформлення через платформи — для безпечної угоди”.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:14px">
+      <div class="card">
+        <h2 style="margin:0 0 10px; font-size:16px">Контакти</h2>
+        <p class="lead" style="margin:0">
+          Додамо твої контакти, коли скажеш які саме: Telegram / Instagram / email.
+          (Я б почала з Telegram + Instagram.)
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> resale.in.ua</div>
+      <div>Зроблено просто: GitHub Pages</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
