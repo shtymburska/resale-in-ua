@@ -132,21 +132,25 @@ nav a:hover{
 }
 
 .itemBody{
-  padding:16px;
+  padding:18px 18px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 }
 
 .title{
+  font-size:16px;
   font-weight:600;
-  margin-bottom:6px;
+  letter-spacing:.2px;
 }
 
 .meta{
   font-size:13px;
   color:var(--muted);
-  margin-bottom:8px;
 }
 
 .price{
-  font-weight:600;
   font-size:18px;
+  font-weight:600;
+  margin-top:4px;
 }
