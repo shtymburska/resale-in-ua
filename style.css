@@ -164,20 +164,23 @@ nav a:hover{
 
 .badge{
   position:absolute;
-  top:10px;
-  left:10px;
+  top:12px;
+  left:12px;
 
-  background:rgba(255,255,255,.85);
-  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(20,20,25,.10);
+  border-radius: 999px;
 
-  border:1px solid rgba(20,20,25,.08);
-  border-radius:999px;
+  padding: 6px 10px;
 
-  padding:6px 10px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 500;
 
-  font-size:12px;
-  font-weight:500;
-  color:var(--text);
+  color: rgba(20,20,25,.78);
 
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  box-shadow: 0 6px 18px rgba(20,20,25,.08);
+  backdrop-filter: blur(10px);
 }
